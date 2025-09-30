@@ -5,8 +5,88 @@
     --color-text-button: #FFF;
 
     /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
-    --hide-overlay: 0;
+    --hide-overlay: 1;
 }
 
 
 /* Begynd her... */
+
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2rem;
+
+}
+
+h1{
+    color: var(--color-heading);
+    font-weight: 900;
+    font-size: 40px;      /* Tilføjet efter jeg fjernede Overlay  */
+
+}
+
+p{
+    color: var(--color-body);
+}
+
+.venstre{
+    margin: 4rem;
+}
+.venstre > *{
+    padding: 1rem;  /* Tilføjet efter jeg fjernede overlay */
+}
+
+.venstre button{
+    border-radius: 80px;
+    background-color: var(--color-bg-button);
+    color: var(--color-text-button);
+    border: none;
+    cursor:pointer;
+}
+
+.højre{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+img{
+    border-radius: 18px;
+}
+
+
+.højre > :first-child {
+    grid-column-start: 2;
+}
+.højre > :nth-child(2) {
+    grid-column-start: 1;
+}
+.højre > :nth-child(3) {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.højre > :nth-child(4) {
+    grid-column-start: 3;
+}
+.højre > :nth-child(5) {
+    grid-column-start: 1;
+}
+.højre > :nth-child(6) {
+    grid-column-start: 3;
+}
+.højre > :nth-child(7) {
+    grid-column-start: 2;
+}
+
+
+@media (max-width: 900px) {
+    .grid{
+        display: block;
+        /* Tilføjet efter jeg fjernede overlay */
+    }
+}
+
