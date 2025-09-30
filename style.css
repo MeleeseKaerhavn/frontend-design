@@ -11,15 +11,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 @layer reset, cards;
 
 @layer cards {
@@ -73,4 +64,33 @@
         place-content: center;
         block-size: 100svh;
     }
+
+}
+
+    
+li:not(:has(h3)):not(:has(img)) p{
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+li:not(:has(img)) h3{
+    font-size: 1.6rem;
+}
+
+li:has(img){
+    padding: 0 !important;  /* Var nødt til at sætte important på, har siddet med den så længe nu */
+    overflow: hidden;
+}
+
+li:has(img) div{
+    padding: 1rem;
+}
+
+li:has(img) img{
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    padding: 0;
+    margin: 0;
+    object-fit: cover;
 }
